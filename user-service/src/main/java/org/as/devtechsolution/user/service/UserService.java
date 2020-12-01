@@ -32,7 +32,7 @@ public class UserService {
 		final UserDto userDto = userMapper.userToUserDto(userRepository.findByUserId(userId));
 
 		final Department department =
-				restTemplate.getForObject("http://localhost:9001/departments/" + userDto.getDepartmentId()
+				restTemplate.getForObject("http://DEPARTMENT-SERVICE/departments/" + userDto.getDepartmentId()
 				,Department.class);
 
 		vo.setUser(userDto);
